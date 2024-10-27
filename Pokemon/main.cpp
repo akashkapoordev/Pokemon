@@ -24,12 +24,34 @@ public:
     PokemonType type;
     int health;
 
-    Pokemon() {}
+    //Default Constructor
+    Pokemon() {
+        name = "unknow";
+        type = PokemonType::GRASS;
+        health = 60;
+        cout << "A new Pokemon has been created with the default constructor!\n";
+    }
+
+    //Para Constructor
     Pokemon(string p_name, PokemonType p_type, int p_health)
     {
         name = p_name;
         type = p_type;
         health = p_health;
+        cout << "A new Pokemon named " << name << " has been created!\n";
+    }
+
+    //copy Constructor
+    Pokemon(const Pokemon& other)
+    {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+        cout << "A new Pokemon has been copied from " << other.name << "!\n";
+    }
+
+    ~Pokemon() {
+        cout << name << " has been released.\n";
     }
 
     void attack()
@@ -44,6 +66,21 @@ public:
     string name;
     Pokemon choosenPokemon;
 
+    //Deafault Constructor
+    Player()
+    {
+        name = "Trainer";
+        choosenPokemon = Pokemon();
+        cout << "A new player named " << name << " has been created!\n";
+    }
+
+    //Parameterized  Constructor
+    Player(string p_name, Pokemon p_choosePokemon)
+    {
+        name = p_name;
+        choosenPokemon = p_choosePokemon;
+        cout << "Player " << name << " has been created!\n";
+    }
     void choosePokemon(int choice)
     {
         switch ((PokemonChoice)choice)
@@ -71,6 +108,10 @@ class ProfessorOak
 public:
     string name;
 
+    ProfessorOak(string p_name)
+    {
+        name = p_name;
+    }
     void greetPlayer(Player& player)
     {
         // Professor introduction with visual spacing and formatting
@@ -109,27 +150,46 @@ public:
 
 int main()
 {
-    Player player;
-    ProfessorOak professor_oak;
-    Pokemon pokemon_placeholder;
+    Pokemon defualtPokemon;
+    Pokemon Charmander("Charmander", PokemonType::GRASS, 100);
 
-    //Assign PokemonPlaceholder
-    pokemon_placeholder.name = "Pikachu";
-    pokemon_placeholder.type = PokemonType::ELECTRIC;
-    pokemon_placeholder.health = 100;
-    // Assign Professor name
-    professor_oak.name = "Professor Oak";
+    cout << defualtPokemon.name << endl;
+    cout << Charmander.name << endl;
 
-    // Call greet and offer Pokémon choices
-    professor_oak.greetPlayer(player);
-    professor_oak.offerPokemonChoices(player);
+    Pokemon Bulbasaur("Bulbasaur", PokemonType::ELECTRIC, 100);
+    Pokemon bulbasaurCopy(Bulbasaur);
 
-    // Concluding the first chapter
-    cout << "\n***************************************" << endl;
-    cout << "Professor Oak: " << player.choosenPokemon.name << " will be your faithful companion on this grand journey, " << player.name << "!" << endl;
-    cout << "Professor Oak: Now, your adventure begins!" << endl;
-    cout << "Professor Oak: The world of Pokémon awaits you with endless possibilities!" << endl;
-    cout << "***************************************\n" << endl;
+    cout << Bulbasaur.health << endl;
+    cout << "Bulbasaur copy" << bulbasaurCopy.health << endl;
+
+    bulbasaurCopy.health = 80;
+    cout << "Bulbasaur copy health again" << bulbasaurCopy.health << endl;
+
+
+    Pokemon pikachu("Pikachu", PokemonType::ELECTRIC, 100);
+
+
+    //Player player;
+    //ProfessorOak professor_oak;
+    //Pokemon pokemon_placeholder;
+
+    ////Assign PokemonPlaceholder
+    //pokemon_placeholder.name = "Pikachu";
+    //pokemon_placeholder.type = PokemonType::ELECTRIC;
+    //pokemon_placeholder.health = 100;
+    //// Assign Professor name
+    //professor_oak.name = "Professor Oak";
+
+    //// Call greet and offer Pokémon choices
+    //professor_oak.greetPlayer(player);
+    //professor_oak.offerPokemonChoices(player);
+
+    //// Concluding the first chapter
+    //cout << "\n***************************************" << endl;
+    //cout << "Professor Oak: " << player.choosenPokemon.name << " will be your faithful companion on this grand journey, " << player.name << "!" << endl;
+    //cout << "Professor Oak: Now, your adventure begins!" << endl;
+    //cout << "Professor Oak: The world of Pokémon awaits you with endless possibilities!" << endl;
+    //cout << "***************************************\n" << endl;
 
     return 0;
 }
