@@ -1,11 +1,11 @@
-#include <iostream>
-#include <string>
-#include "PokemonType.h"
-#include "PokemonChoice.h"
-#include "Utility.h"
+#include "Player.h"
 #include "Pokemon.h"
-#include "Player.h";
-
+#include "PokemonChoice.h"
+#include "PokemonType.h"
+#include "Utility.h"
+#include <iostream>
+#include <limits> // Include this header to use numeric_limits
+#include <string>
 using namespace std;
 
 
