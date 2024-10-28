@@ -6,5 +6,3 @@ public:
 	static void WaitForEnter();
 	static void clearInputBuffer();
 };
-
-
