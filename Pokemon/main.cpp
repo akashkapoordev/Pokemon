@@ -3,53 +3,12 @@
 #include "PokemonType.h"
 #include "PokemonChoice.h"
 #include "Utility.h"
-
+#include "Pokemon.h"
+#include "Player.h";
 
 using namespace std;
 
-class Pokemon
-{
-public:
-    string name;
-    PokemonType type;
-    int health;
 
-    //Default Constructor
-    Pokemon() {
-        name = "unknow";
-        type = PokemonType::GRASS;
-        health = 60;
-       
-    }
-
-    //Para Constructor
-    Pokemon(string p_name, PokemonType p_type, int p_health)
-    {
-        name = p_name;
-        type = p_type;
-        health = p_health;
-       
-    }
-
-    //copy Constructor
-    Pokemon(const Pokemon& other)
-    {
-        name = other.name;
-        type = other.type;
-        health = other.health;
-     
-    }
-
-    ~Pokemon() {
-        
-    }
-
-    void attack()
-    {
-        cout << name << " attacks with a powerful move!\n";
-    }
-};
-#include "Player.h";
 
 class ProfessorOak
 {
