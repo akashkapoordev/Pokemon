@@ -19,7 +19,7 @@ void Game::Gameloop(Player& player)
 {
     int choice;
     bool  keepPlaying = true;
-
+    Pokemon encounterPokemon;
     while (keepPlaying)
     {
         Utility::clearConsole();
@@ -38,7 +38,7 @@ void Game::Gameloop(Player& player)
         {
         case 1:
             WildEncounterManager encounterManager;
-            Pokemon encounterPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+            encounterPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
             cout << "A wild " << encounterPokemon.name << " appeared!\n";
             break;
         case 2:
