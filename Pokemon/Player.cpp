@@ -1,6 +1,5 @@
 // Player.cpp
 #include "Player.h"
-#include "Pokemon.h"
 #include "iostream"
 #include "PokemonChoice.h"
 #include "PokemonType.h"
