@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include "PokemonType.h"
+#include "PokemonChoice.h"
 using namespace std;
 
 void waitforEnter()
@@ -16,20 +18,8 @@ void clearConsole()
 #endif
 }
 
-enum class PokemonChoice {
-    Charmander = 1,
-    Bulbasaur,
-    Squirtle,
-    Pikachu,
-    InvalidChoice
-};
 
-enum class PokemonType {
-    FIRE,
-    GRASS,
-    WATER,
-    ELECTRIC
-};
+
 
 class Pokemon
 {
@@ -283,5 +273,4 @@ int main()
     //cout << "***************************************\n" << endl;
 
     return 0;
-
-    #include "Header.h";
+}
