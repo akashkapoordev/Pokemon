@@ -3,6 +3,8 @@
 #include "PokemonType.h"
 #include "PokemonChoice.h"
 #include "Utility.h"
+
+
 using namespace std;
 
 class Pokemon
@@ -47,45 +49,7 @@ public:
         cout << name << " attacks with a powerful move!\n";
     }
 };
-
-class Player
-{
-public:
-    string name;
-    Pokemon choosenPokemon;
-
-    //Deafault Constructor
-    Player()
-    {
-        name = "Trainer";
-        choosenPokemon = Pokemon();
-    }
-
-    //Parameterized  Constructor
-    Player(string p_name, Pokemon p_choosePokemon)
-    {
-        name = p_name;
-        choosenPokemon = p_choosePokemon;
-    }
-    void choosePokemon(int choice)
-    {
-        switch ((PokemonChoice)choice)
-        {
-        case PokemonChoice::Charmander:
-            choosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
-            break;
-        case PokemonChoice::Bulbasaur:
-            choosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
-            break;
-        case PokemonChoice::Squirtle:
-            choosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100);
-            break;
-        default:
-            choosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100);
-            break;
-        }
-    }
-};
+#include "Player.h";
 
 class ProfessorOak
 {
@@ -238,7 +202,7 @@ int main()
     ProfessorOak professor_oak("Professor Oak");
 
     //Continue with main flow
-    Player player("Ash", Pokemon("Pikachu",PokemonType::ELECTRIC,100));
+    Player player("Ash", Pokemon("Pikachu", PokemonType::ELECTRIC, 100));
 
 
     // Call greet and offer Pok�mon choices

@@ -8,11 +8,11 @@ class Player
 {
 public:
 	string name;
-	//Pokemon choosenPokemon;
+	Pokemon choosenPokemon;
 
 	Player();
 
-	//Player(string p_name, Pokemon p_choosePokemon);
+	Player(string p_name, Pokemon p_choosePokemon);
 	void choosePokemon(int choice);
 
 
