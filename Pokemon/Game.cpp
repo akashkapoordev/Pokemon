@@ -42,7 +42,10 @@ void Game::Gameloop(Player& player)
             cout << "A wild " << encounterPokemon.name << " appeared!\n";
             break;
         case 2:
-            cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\\n";
+            cout << "You head to the PokeCenter.\\n";
+            player.choosenPokemon.heal();
+            cout << player.choosenPokemon.name << "'s health is fully restored!\\n";
+            break;
             break;
         case 3:
             cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\\n";
