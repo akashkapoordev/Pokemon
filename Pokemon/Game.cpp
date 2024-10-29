@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "WildEncounterManager.h"
 #include "Utility.h"
+#include "BattleManager.h"
 #include<iostream>
 using namespace std;
 
@@ -17,6 +18,7 @@ Game::Game()
 
 void Game::Gameloop(Player& player)
 {
+    BattleManager battleManager;
     int choice;
     bool  keepPlaying = true;
     Pokemon encounterPokemon;
@@ -39,7 +41,7 @@ void Game::Gameloop(Player& player)
         case 1:
             WildEncounterManager encounterManager;
             encounterPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
-            cout << "A wild " << encounterPokemon.name << " appeared!\n";
+            battleManager.startBattle(player.choosenPokemon, encounterPokemon);
             break;
         case 2:
             cout << "You head to the PokeCenter.\\n";
